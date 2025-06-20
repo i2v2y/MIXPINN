@@ -1,0 +1,44 @@
+
+---
+gui: true
+
+# Simulation
+dt: 0.1 # time step of the simulation [s]
+gravity: [0, 0, 0]
+alarm_distance: 4 # [mm] 
+contact_distance: 2 # [mm] should be larger than dt * probe_velocity
+friction_coef: 1 # non-slippery
+
+### Body
+body_volume_file: "Simulation/data/mesh/body.vtu" # tetrahedral mesh filename
+body_visual_file: "Simulation/data/mesh/body_visual.stl" # surface mesh (.stl) filename
+body_collision_file: "Simulation/data/mesh/body_collision.stl" # surface mesh (.stl) filename
+
+# Physical parameters
+density: 1000 # [kg/m3]
+material: StableNeoHookean
+young_modulus: 25400 # [Pa = N/m2 = g/mm/s2]
+poisson_ratio: 0.45 # [no unit]
+
+# Rendering parameters
+body_rigid_file: "Simulation/data/inputs/rigid.txt" # index of points to rigidified
+body_fixed_file: "Simulation/data/inputs/fixed.txt"
+body_color: [0.957, 0.730, 0.582, 1]
+
+### Probe
+probe_visual_file: 'Simulation/data/mesh/probe_visual.stl'
+probe_collision_file: 'Simulation/data/mesh/probe_collision.stl'
+probe_pos_file: 'Simulation/data/inputs/probe_positions.txt'
+
+# Physical parameters
+probe_mass: 0.2 # [Kg]
+probe_velocity: 10 # [mm/s]
+
+# Rendering parameters
+probe_rotation: [0, 0, 0] # rotation of the probe in euler angles [deg], change to [0, 90, 0] if needed
+probe_scale: [1, 1, 1]
+probe_color: [1, 1, 1, 1]
+
+# I/O
+outputs_dir: "Simulation/data/outputs/"
+...

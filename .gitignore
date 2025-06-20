@@ -1,0 +1,14 @@
+*.pyc
+*.py.log
+__pycache__/
+.DS_Store
+*.json
+.vscode/
+.neptune/
+*.out
+*.ini
+*.sh
+*logs
+
+Simulation/data/outputs
+GNN/Data

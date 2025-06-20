@@ -1,0 +1,21 @@
+# model configuration
+rel: False                  # Use rigid edge loss or not
+vn: False                   # Use virtual node or not
+ve: True                    # Use virtual edge or not
+
+# model hyperparameters
+input_dim:  14              # Number of input features 
+hidden_dim: 256             # Number of hidden units
+output_dim: 3               # Number of output features
+heads: 2                    # Number of attention heads
+edge_dim: 6                 # Number of edge features
+num_layers: 8               # Number of GAT layers
+
+# training hyperparameters
+batch_size: 4               # Training batch size
+max_epochs: 500             # Maximum Number of epochs to train
+lr: 5.0e-4                  # Learning rate for optimizer
+min_lr: 1.0e-8              # Minimum learning rate
+weight_decay: 0.01          # Weight decay for AdamW optimizer, default 0.01
+lr_decay_patience: 5        # Learning rate decay, number of epochs with no improvement to reduce LR
+early_stop_patience: 15     # Early stopping, number of epochs with no improvement to stop
